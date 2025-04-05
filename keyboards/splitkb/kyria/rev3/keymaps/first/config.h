@@ -35,3 +35,7 @@
 #    endif
 #endif
 
+#define TAPPING_TERM 150
+#define QUICK_TAP_TERM 30
+#undef PERMISSIVE_HOLD
+#undef HOLD_ON_OTHER_KEY_PRESS
