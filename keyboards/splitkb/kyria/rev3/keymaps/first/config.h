@@ -36,6 +36,6 @@
 #endif
 
 #define TAPPING_TERM 250
-#define QUICK_TAP_TERM 30
+#define QUICK_TAP_TERM 50
 #define CHORDAL_HOLD
-#define HOLD_ON_OTHER_KEY_PRESS
+#define PERMISSIVE_HOLD
