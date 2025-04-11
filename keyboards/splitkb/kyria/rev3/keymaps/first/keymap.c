@@ -50,6 +50,25 @@ enum layers {
 #define CTL_MINS MT(MOD_RCTL, KC_MINUS)
 #define ALT_ENT  MT(MOD_LALT, KC_ENT)
 
+// Umlaute
+enum unicode_names {
+    AE_LOWER,
+    AE_UPPER,
+    OE_LOWER,
+    OE_UPPER,
+    UE_LOWER,
+    UE_UPPER,
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [AE_LOWER] = 0x00E4,
+    [AE_UPPER] = 0x00C4,
+    [OE_LOWER] = 0x00F6,
+    [OE_UPPER] = 0x00D6,
+    [UE_LOWER] = 0x00FC,
+    [UE_UPPER] = 0x00DC,
+};
+
 // Home Row Mods for Colemak_DH
 // Left-hand home row mods
 
