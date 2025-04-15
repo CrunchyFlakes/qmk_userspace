@@ -201,16 +201,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_SYM] = LAYOUT(
-      _______ ,   KC_TILDE ,   KC_LABK ,   KC_RABK ,   KC_HASH ,   KC_AT ,                                       KC_AMPERSAND ,   KC_COLON ,   KC_LBRC ,   KC_RBRC ,   KC_BACKSLASH , _______,
+      _______ ,   KC_TILDE ,   KC_LABK ,   KC_RABK ,   KC_HASH , _______,                                       KC_AMPERSAND ,   KC_COLON ,   KC_LBRC ,   KC_RBRC ,   KC_BACKSLASH , _______,
      _______ , KC_EXLM,  KC_MINUS, KC_PLUS,  KC_KP_EQUAL, KC_GRV,                                     KC_DOLLAR, KC_UNDS, KC_LPRN, KC_RPRN, KC_PERC, _______,
-     _______ ,KC_CIRC , KC_SLASH, KC_ASTR, KC_0, KC_MINS, _______, _______, _______, _______, KC_PIPE, KC_1,  KC_LCBR, KC_RCBR, _______, _______,
+     _______ ,KC_CIRC , KC_SLASH, KC_ASTR, KC_AT, KC_0, _______, _______, _______, _______, KC_1, KC_PIPE, KC_LCBR, KC_RCBR, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
     [_NUM] = LAYOUT(
-      _______ ,   _______ ,   _______ ,   _______ ,   _______ ,   _______ ,                                       KC_6 ,   KC_7 ,   KC_8 ,   KC_9 ,   KC_0 , _______ ,
+      _______ ,   _______ ,   _______ ,   _______ ,   _______ ,   _______ ,                                       _______,   KC_7 ,   KC_8 ,   KC_9 ,   KC_0 , KC_COLON,
      _______ , MT(MOD_LCTL, _______),  MT(MOD_LALT, KC_MINUS), MT(MOD_LGUI, KC_PLUS),  MT(MOD_LSFT, KC_EQUAL), _______, _______, MT(MOD_RSFT, KC_4) , MT(MOD_RGUI, KC_5) , MT(MOD_RALT, KC_6) , MT(MOD_RCTL, KC_0) , _______,
-     _______ , _______, KC_SLASH, KC_ASTERISK, _______, _______, _______, _______, _______, _______, _______,   KC_1,    KC_2 ,   KC_3 , _______, _______,
+     _______ , _______, KC_SLASH, KC_ASTERISK, _______, _______, _______, _______, _______, _______, _______,   KC_1,    KC_2 ,   KC_3 , KC_MINUS, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
