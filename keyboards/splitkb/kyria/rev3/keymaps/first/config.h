@@ -35,7 +35,7 @@
 #    endif
 #endif
 
-#define TAPPING_TERM 250
+#define TAPPING_TERM 150
 #define QUICK_TAP_TERM 75
 #define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
