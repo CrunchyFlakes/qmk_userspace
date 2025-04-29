@@ -24,8 +24,10 @@ void keyboard_pre_init_user(void) {
 
 enum layers {
     _COLEMAK_DH = 0,
-    _DVORAK,
     _QWERTY,
+    _DVORAK,
+    _GAMING,
+    _GAMING_QWERTY,
     _NAV,
     _SYM,
     _NUM,
@@ -35,9 +37,11 @@ enum layers {
 
 
 // Aliases for readability
-#define COLEMAK  DF(_COLEMAK_DH)
-#define QWERTY   DF(_QWERTY)
-#define DVORAK   DF(_DVORAK)
+#define COLEMAK         DF(_COLEMAK_DH)
+#define QWERTY          DF(_QWERTY)
+#define DVORAK          DF(_DVORAK)
+#define GAMING          DF(_GAMING)
+#define GAMING_QWERTY   DF(_GAMING_QWERTY)
 
 #define SYM      MO(_SYM)
 #define NUM      MO(_NUM)
@@ -164,6 +168,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_LSFT ,KC_SCLN, KC_Q   ,  KC_J  ,   KC_K ,   KC_X , ADJUST, FUNCTION,     FUNCTION, _______, KC_B,   KC_M ,  KC_W ,   KC_V ,  KC_Z , KC_RSFT,
                                  KC_APP, LT(NAV, KC_TAB), LT(SYM, KC_SPC), LT(NUM, KC_ESC), QK_CAPS_WORD_TOGGLE, KC_CAPS, LT(NUM, KC_ENT),LT(SYM, KC_BSPC), KC_DEL, _______
     ),
+    [_GAMING] = LAYOUT(
+     KC_TAB  , KC_Q ,  KC_W   ,  KC_F  ,   KC_P ,   KC_B ,                                        KC_J,   KC_L ,  KC_U ,   KC_Y ,KC_SCLN, KC_BSPC,
+     KC_LSFT , KC_A ,  KC_R   ,  KC_S  ,   KC_T ,   KC_G ,                                        KC_M,   KC_N ,  KC_E ,   KC_I ,  KC_O , CTL_QUOT,
+     KC_LCTL , KC_Z ,  KC_X   ,  KC_C  ,   KC_D ,   KC_V , ADJUST, FUNCTION,     FUNCTION, _______, KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+                                 KC_LALT, LT(NAV, KC_TAB), LT(SYM, KC_SPC), LT(NUM, KC_ESC), QK_CAPS_WORD_TOGGLE, KC_CAPS, LT(NUM, KC_ENT),LT(SYM, KC_BSPC), KC_DEL, _______
+    ),
+
+    [_GAMING_QWERTY] = LAYOUT(
+     KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSPC,
+     KC_LSFT, KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN,CTL_QUOT,
+     KC_LCTL , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , ADJUST, FUNCTION,     FUNCTION, _______, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+                                 KC_LALT, LT(NAV, KC_TAB), LT(SYM, KC_SPC), LT(NUM, KC_ESC), QK_CAPS_WORD_TOGGLE, KC_CAPS, LT(NUM, KC_ENT),LT(SYM, KC_BSPC), KC_DEL, _______
+    ),
 
 /*
  * Nav Layer: Media, navigation
@@ -251,11 +268,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_ADJUST] = LAYOUT(
-      _______, _______, _______, COLEMAK , _______, _______,                                    _______, _______, _______, _______,  _______, QK_BOOT,
-      _______, _______, _______, QWERTY  , _______, _______,                                    RM_TOGG, RM_SATU, RM_HUEU, RM_VALU,  RM_NEXT, _______,
+      _______, _______, _______, COLEMAK , GAMING, _______,                                    _______, _______, _______, _______,  _______, QK_BOOT,
+      _______, _______, _______, QWERTY  , GAMING_QWERTY, _______,                                    RM_TOGG, RM_SATU, RM_HUEU, RM_VALU,  RM_NEXT, _______,
       _______, _______, _______, DVORAK  , _______, _______,_______, _______, _______, _______, _______, RM_SATD, RM_HUED, RM_VALD, RM_PREV,  _______,
                                  _______, _______, _______,_______, _______, _______, _______, _______, _______, _______
     ),
+
 
 // /*
 //  * Layer template
@@ -327,6 +345,12 @@ bool oled_task_user(void) {
                 break;
             case _ADJUST:
                 oled_write_P(PSTR("Adjust\n"), false);
+                break;
+            case _GAMING:
+                oled_write_P(PSTR("Gaming\n"), false);
+                break;
+            case _GAMING_QWERTY:
+                oled_write_P(PSTR("Gaming-QWERTY\n"), false);
                 break;
             default:
                 oled_write_P(PSTR("Undefined\n"), false);
