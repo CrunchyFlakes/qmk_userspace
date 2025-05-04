@@ -123,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT(
      KC_TAB  , KC_Q ,  KC_W   ,  KC_F  ,   KC_P ,   KC_B ,                                        KC_J,   KC_L ,  KC_U ,   KC_Y ,KC_SCLN, KC_BSPC,
      CTL_ESC , CH_A ,  CH_R   ,  CH_S  ,   CH_T ,   KC_G ,                                        KC_M,   CH_N ,  CH_E ,   CH_I ,  CH_O , CTL_QUOT,
-     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_D ,   KC_V , ADJUST, FUNCTION,     FUNCTION, _______, KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_D ,   KC_V , ADJUST, FUNCTION,     FUNCTION, GAMING, KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
                                  KC_APP, LT(NAV, KC_TAB), LT(SYM, KC_SPC), LT(NUM, KC_ESC), QK_CAPS_WORD_TOGGLE, KC_CAPS, LT(NUM, KC_ENT),LT(SYM, KC_BSPC), KC_DEL, _______
     ),
 
@@ -144,7 +144,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT(
      KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSPC,
      CTL_ESC , QH_A ,  QH_S   ,  QH_D  ,   QH_F ,   KC_G ,                                        KC_H,   QH_J ,  QH_K ,   QH_L ,QH_SCLN,CTL_QUOT,
-     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , ADJUST, FUNCTION,     FUNCTION, _______, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , ADJUST, FUNCTION,     FUNCTION, GAMING, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
                                  KC_APP, LT(NAV, KC_TAB), LT(SYM, KC_SPC), LT(NUM, KC_ESC), QK_CAPS_WORD_TOGGLE, KC_CAPS, LT(NUM, KC_ENT),LT(SYM, KC_BSPC), KC_DEL, _______
     ),
 
@@ -165,21 +165,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT(
      KC_TAB  ,KC_QUOTE,KC_COMM,  KC_DOT,   KC_P ,   KC_Y ,                                        KC_F,   KC_G ,  KC_C ,   KC_R ,  KC_L , KC_BSPC,
      CTL_ESC , KC_A ,  KC_O   ,  KC_E  ,   KC_U ,   KC_I ,                                        KC_D,   KC_H ,  KC_T ,   KC_N ,  KC_S , CTL_MINS,
-     KC_LSFT ,KC_SCLN, KC_Q   ,  KC_J  ,   KC_K ,   KC_X , ADJUST, FUNCTION,     FUNCTION, _______, KC_B,   KC_M ,  KC_W ,   KC_V ,  KC_Z , KC_RSFT,
+     KC_LSFT ,KC_SCLN, KC_Q   ,  KC_J  ,   KC_K ,   KC_X , ADJUST, FUNCTION,     FUNCTION, GAMING, KC_B,   KC_M ,  KC_W ,   KC_V ,  KC_Z , KC_RSFT,
                                  KC_APP, LT(NAV, KC_TAB), LT(SYM, KC_SPC), LT(NUM, KC_ESC), QK_CAPS_WORD_TOGGLE, KC_CAPS, LT(NUM, KC_ENT),LT(SYM, KC_BSPC), KC_DEL, _______
     ),
     [_GAMING] = LAYOUT(
      KC_TAB  , KC_Q ,  KC_W   ,  KC_F  ,   KC_P ,   KC_B ,                                        KC_J,   KC_L ,  KC_U ,   KC_Y ,KC_SCLN, KC_BSPC,
      KC_LSFT , KC_A ,  KC_R   ,  KC_S  ,   KC_T ,   KC_G ,                                        KC_M,   KC_N ,  KC_E ,   KC_I ,  KC_O , CTL_QUOT,
-     KC_LCTL , KC_Z ,  KC_X   ,  KC_C  ,   KC_D ,   KC_V , ADJUST, FUNCTION,     FUNCTION, _______, KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
-                                 KC_LALT, LT(NAV, KC_TAB), LT(SYM, KC_SPC), LT(NUM, KC_ESC), QK_CAPS_WORD_TOGGLE, KC_CAPS, LT(NUM, KC_ENT),LT(SYM, KC_BSPC), KC_DEL, _______
+     KC_LCTL , KC_Z ,  KC_X   ,  KC_C  ,   KC_D ,   KC_V , ADJUST, FUNCTION,     FUNCTION, COLEMAK, KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+                                 KC_LALT, KC_TAB, KC_SPC, KC_ESC, QK_CAPS_WORD_TOGGLE, KC_CAPS, KC_ENT, KC_BSPC, KC_DEL, _______
     ),
 
     [_GAMING_QWERTY] = LAYOUT(
      KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSPC,
      KC_LSFT, KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN,CTL_QUOT,
-     KC_LCTL , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , ADJUST, FUNCTION,     FUNCTION, _______, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
-                                 KC_LALT, LT(NAV, KC_TAB), LT(SYM, KC_SPC), LT(NUM, KC_ESC), QK_CAPS_WORD_TOGGLE, KC_CAPS, LT(NUM, KC_ENT),LT(SYM, KC_BSPC), KC_DEL, _______
+     KC_LCTL , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , ADJUST, FUNCTION,     FUNCTION, COLEMAK, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+                                 KC_LALT, KC_TAB, KC_SPC, KC_ESC, QK_CAPS_WORD_TOGGLE, KC_CAPS, KC_ENT, KC_BSPC, KC_DEL, _______
     ),
 
 /*
