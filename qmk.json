@@ -1,6 +1,7 @@
 {
     "userspace_version": "1.1",
     "build_targets": [
-        ["splitkb/kyria/rev3", "first"]
+        ["splitkb/kyria/rev3", "first"],
+        ["ploopyco/trackball/rev1_007", "default"]
     ]
 }
